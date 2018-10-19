@@ -88,7 +88,7 @@
  * );
  * @endcode
  */
-$databases = [
+$databases['default']['default'] = [
   'database' => getenv('DB_DATABASE'),
   'driver' => getenv('DB_CONNECTION'),
   'host' => getenv('DB_HOST'),
