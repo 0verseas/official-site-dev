@@ -22,7 +22,7 @@
   {% endif %} 
     <div class="inner">
       <div id="header-top" class="expanded row collapse text-center">
-        <div id="social-media" class="large-4 column show-for-large">
+        <div id="social-media" class="large-4 column show-for-large" style="display:none;">
           {{ page.social_media }}
         </div>
         {% if page.primary_menu_mobile %}
@@ -30,11 +30,23 @@
             <button type="button" class="button hollow ghost" title="Menu" data-toggle="reveal-menu">menu</button>
           </div>
         {% endif %}
-        <div id="site-info" class="small-9 medium-6 large-4 column">        
-          {% if page.site_info %}          
+        <div id="site-info" class=" medium-3 column" style="width:300px;padding-top:3px;">        
+          <!--{% if page.site_info %}          
             {{ page.site_info }}
-          {% endif %}
+          {% endif %}-->
+          <div class="site-logo">
+            <a href="/" title="Home" rel="home">
+              <img src="https://cmn-hant.overseas.ncnu.edu.tw/sites/default/files/overseas_logo.svg" alt="Home" style="">
+            </a>
+          </div>   
         </div>
+	<div id="header-bottom" class="medium-8 column">
+        	{% if page.primary_menu %}
+          	<div id="menu-primary" class="expanded column row">
+            		{{ page.primary_menu }}
+          	</div>
+        	{% endif %}
+      	</div>
         <div id="menu-sub" class="medium-3 large-4 column show-for-medium">
           {% if omni_header_login or page.search %}
             <ul class="menu">
@@ -50,6 +62,7 @@
           {% endif %}
         </div>
       </div>
+<!--
       <div id="header-bottom" class="show-for-large">
         {% if page.primary_menu %}
           <div id="menu-primary" class="expanded column row">
@@ -57,6 +70,7 @@
           </div>
         {% endif %}     
       </div>
+-->
       <div class="large reveal fast" id="reveal-search" data-reveal data-close-on-click="true" data-animation-in="scale-in-up" data-animation-out="scale-out-down">
         <button class="close-button" data-close aria-label="Close reveal" type="button">
           <span aria-hidden="true">&times;</span>
