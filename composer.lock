@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55a976f11ef4f48628c9d440f0861e32",
+    "content-hash": "217a90aa81400e8f2f1949a6f3ab6ce9",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3037,6 +3037,57 @@
             "homepage": "http://drupal.org/project/entity",
             "support": {
                 "source": "http://cgit.drupalcode.org/entity"
+            }
+        },
+        {
+            "name": "drupal/facebook_mcc",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/facebook_mcc",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/facebook_mcc-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "4c73e4ed0b286741d0f22a6b86f286e1c45c3afd"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1538228281",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Anas_maw",
+                    "homepage": "https://www.drupal.org/user/3258840"
+                },
+                {
+                    "name": "Yasser Samman",
+                    "homepage": "https://www.drupal.org/user/1394966"
+                }
+            ],
+            "description": "Facebook Messenger Customer Chat Plugin For Drupal.",
+            "homepage": "https://www.drupal.org/project/facebook_mcc",
+            "support": {
+                "source": "http://cgit.drupalcode.org/facebook_mcc"
             }
         },
         {
