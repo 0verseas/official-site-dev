@@ -15,6 +15,9 @@ function omni_portfolio_preprocess_html(&$variables) {
   else {
     $variables['attributes']['class'][] = 'no-sidebars';
   }
+
+  $variables['HK_FB_PAGE_ID'] = getenv('HK_FB_PAGE_ID');
+  $variables['HK_FB_APP_ID'] = getenv('HK_FB_APP_ID');
 }
 
 function omni_portfolio_preprocess_page(&$variables) {

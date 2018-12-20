@@ -22,6 +22,7 @@
     node_type ? 'node-type-' ~ node_type|clean_class,
   ]
 %}
+{% set current_url = url('<current>') %}
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
@@ -29,6 +30,15 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
   </head>
   <body{{ attributes.addClass(body_classes) }}>    
     <a href="#main-content" class="visually-hidden focusable">
@@ -38,5 +48,23 @@
     {{ page }}
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+
+    {% if 'from/hongkong' in current_url|render|render %}
+      <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: {{ HK_FB_APP_ID }},
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: 'v2.12'
+        });
+      };
+      </script>
+
+      <div class="fb-customerchat"
+        page_id="{{ HK_FB_PAGE_ID }}">
+      </div>
+    {% else %}
+    {% endif %}
   </body>
 </html>
