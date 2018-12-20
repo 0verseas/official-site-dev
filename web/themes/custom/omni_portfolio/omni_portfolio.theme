@@ -16,8 +16,14 @@ function omni_portfolio_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'no-sidebars';
   }
 
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  
+  $variables['language'] = $language;
+
   $variables['HK_FB_PAGE_ID'] = getenv('HK_FB_PAGE_ID');
   $variables['HK_FB_APP_ID'] = getenv('HK_FB_APP_ID');
+  $variables['MACAU_FB_PAGE_ID'] = getenv('MACAU_FB_PAGE_ID');
+  $variables['MACAU_FB_APP_ID'] = getenv('MACAU_FB_APP_ID');
 }
 
 function omni_portfolio_preprocess_page(&$variables) {

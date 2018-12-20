@@ -31,11 +31,17 @@
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
     <script>
+      {% if (language == 'zh-hant') %}
+        var fb_locale = 'zh_TW';
+      {% else %}
+        var fb_locale = 'en_US';
+      {% endif %}
+      
       (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+        js.src = 'https://connect.facebook.net/' + fb_locale + '/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
@@ -63,6 +69,21 @@
 
       <div class="fb-customerchat"
         page_id="{{ HK_FB_PAGE_ID }}">
+      </div>
+    {% elseif 'from/macau' in current_url|render|render %}
+      <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: {{ MACAU_FB_APP_ID }},
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: 'v2.12'
+        });
+      };
+      </script>
+
+      <div class="fb-customerchat"
+        page_id="{{ MACAU_FB_PAGE_ID }}">
       </div>
     {% else %}
     {% endif %}
