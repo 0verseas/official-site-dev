@@ -35,7 +35,6 @@
         "drupal/editor_advanced_link": "^1.4",
         "drupal/editor_file": "^1.2",
         "drupal/entity": "^1.0",
-        "drupal/facebook_mcc": "^1.1",
         "drupal/facebook_pixel": "^1.0",
         "drupal/features": "^3.8",
         "drupal/field_group": "^3.0",
